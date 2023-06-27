@@ -1,0 +1,31 @@
+.onboarding {
+    &-stepper {
+        margin-bottom: rem(44);
+    }
+    &-card {
+
+        &__date-section{
+            display: flex;
+            margin-top: rem(20);
+            & .form-control {
+                margin: 0;
+                width: 100%;
+                &:last-child{
+                    margin-left: rem(12);
+                }
+            }
+        }
+
+        &-helper-text{
+            margin: rem(8) 0;
+            @extend %description-10;
+        }
+        &__provider {
+            @include border($grey, rem(7), rem(1));
+            align-self: center;
+            padding: rem(20) rem(32);
+            margin-bottom: rem(56);
+            margin-top: rem(32);
+        }
+    }
+}

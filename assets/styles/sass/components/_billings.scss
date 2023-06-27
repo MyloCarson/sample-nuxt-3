@@ -1,0 +1,50 @@
+.billings {
+
+    &-empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: rem(52);
+
+       
+
+        &__description {
+            @extend %description-12;
+            margin-bottom: rem(32);
+            margin-top: rem(16);
+        }
+    }
+    &-delete {
+        &__container {
+            width: rem(286);
+            height: auto;
+        }
+        &__wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: rem(32);
+        }
+
+        &__header {
+            @extend %description-16;
+            font-weight: 600;
+            margin-bottom: rem(10);
+            margin-top: rem(36);
+        }
+        &__description {
+            @extend %description-12;
+            color: map-get($silver-map, 200 );
+            font-weight: 500;
+        }
+
+        &__footer {
+            display: flex;
+            flex-direction: row;
+            margin-top: rem(48);
+            & .btn:first-child {
+                margin-right: rem(8);
+            }
+        }
+    }
+}

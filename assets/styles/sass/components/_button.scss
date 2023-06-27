@@ -1,0 +1,94 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: rem(8);
+  text-transform: capitalize;
+  height: max-content;
+  @extend %description-14;
+  font-weight: 500;
+  cursor: pointer;
+  padding: rem(10) rem(12);
+
+  //state
+  &-loading {
+    padding: 2rem 1rem;
+    @extend %center;
+
+    &-icon {
+      width: 2rem;
+      animation: rotate 800ms infinite linear;
+      height: 2rem;
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+
+  &:disabled {
+    background-color: map-get($silver-map, 200);
+  }
+
+  // variants
+
+  &--primary {
+    background-color: map-get($black-map, 200);
+    color: $white;
+  }
+
+  &--red {
+    background-color: map-get($status-map, red);
+    color: $white;
+  }
+
+  &--transparent {
+    background-color: transparent;
+  }
+
+  &--outlined {
+    border: rem(2) solid map-get($black-map, 200);
+    background-color: transparent;
+    color: map-get($black-map, 200);
+  }
+
+  &-outlined-grey{
+    border: rem(1) solid map-get($silver-map, 300);
+    color: map-get($black-map, 200 );
+    background-color: transparent;
+  }
+
+
+  //size
+
+  &--small {
+    @extend %description-10;
+  }
+
+  &--inline {
+    @extend %description-10;
+    padding: rem(6) rem(10);
+  }
+
+  // icon
+  &-icon:not(:empty) {
+    & {
+      margin-right: 0.8rem;
+
+      > :first-child {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+}

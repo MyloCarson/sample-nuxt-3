@@ -1,0 +1,82 @@
+.dispatch-onbd{
+
+    &-wrapper {
+        width: 100%;
+        padding-top: rem(64);
+    }
+    &-title{
+        @extend %title-20;
+        font-weight: 600;
+        text-align: center;
+    }
+    &-description{
+        @extend %description-10;
+        font-weight: 500;
+        text-align: center;
+        color: map-get($black-map, 300 )
+    }
+
+    &__action{
+        &__container{
+            display: flex;
+            align-items: center;
+
+
+            & svg {
+                &:first-child {
+                    margin-right: rem(20);
+                }
+
+                &:last-child {
+                    margin-left: rem(20);
+                }
+            }
+        }
+
+        &-title{
+            @extend %description-14;
+            font-weight: 600;
+            color: map-get($black-map, 200);
+            line-height: rem(16)
+        }
+        &-description {
+            @extend %description-10;
+            font-weight: 500;
+            color: map-get($black-map, 300 )
+        }
+    }
+
+    &__content{
+        display: flex;
+        margin-top: rem(48);
+        gap: rem(36);
+        align-items: center;
+        justify-content: center;
+        // grid-template-columns: repeat(12, 1fr);
+        // column-gap: rem(16);
+
+        &-left, &-right{
+            flex-basis: 50%;
+
+            &.single {
+                flex-basis: auto;
+            }
+        }
+
+
+
+        &-img{
+            height: 100%;
+            width: 100%;
+
+            &-wrapper{
+                height: rem(320);
+                margin-top: rem(64);
+            }
+        }
+
+        &:last-child {
+            margin-top: 0;
+        }
+    }
+}

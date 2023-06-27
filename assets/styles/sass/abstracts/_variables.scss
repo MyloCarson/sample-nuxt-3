@@ -1,0 +1,33 @@
+$ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+$ease: cubic-bezier(0.2, 0.6, 0.35, 1);
+
+// fonts
+$primary-font: 'SF Pro Display', sans-serif;
+
+//colors
+$black-map: (100: #000000, 200: #161616, 300: #484848, 400: #121212);
+$white: #FFFFFF;
+$ghost: #EFEFEF;
+$ghost-light: #E6E6E6;
+$whitesmoke: #F5F5F5;
+$snow: #F4F4F4;
+$silver-map: (100: #C8C8C8, 200: #B0B0B0, 300: #D0D0D0, );
+$green: #0CBB67;
+$status-map: (
+    yellow-light: #FFF8E5,
+    yellow: #E5A500,
+    green-light: #D9FDEB,
+    purple-light: #E6E6FE,
+    purple: #9F9EFD,
+    red-light: #FFDBDB,
+    red: #F33939,
+);
+$primary-color: #FFC93E;
+$grey: #727272;
+$grey-map: (100: #D1D1D1);
+$blueish: #7E7DFC;
+$browm-map: (100: #EEEEEE);
+$ghostwhite: #F9F9FA;
+
+//z-index
+$z-indexes: ('modal', 'navigation', 'label', 'dropdown');

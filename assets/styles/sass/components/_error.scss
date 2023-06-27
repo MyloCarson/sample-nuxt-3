@@ -1,0 +1,21 @@
+.error {
+    &-boundary{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        &__title {
+            @extend %description-20;
+            font-weight: 600;
+        }
+
+        &__description {
+            @extend %description-12;
+            color: map-get($black-map, 300);
+            margin-top: rem(4);
+            margin-bottom: rem(14);
+        }
+    }
+}

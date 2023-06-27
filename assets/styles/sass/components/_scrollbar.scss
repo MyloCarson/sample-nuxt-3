@@ -1,0 +1,24 @@
+.scrollbar {
+    &::-webkit-scrollbar {
+        display: block;
+        width: rem(2);
+        height: rem(10);
+    }
+    
+    *::-webkit-scrollbar-button {
+        height: rem(2);
+    }
+    
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        background-color: map-get($silver-map, 400);
+        margin-top: rem(80);
+        margin-bottom: rem(80);
+    }
+     
+    &::-webkit-scrollbar-thumb {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+        background-color: map-get($black-map, 100 );
+        height: rem(2);
+    }
+}

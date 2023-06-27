@@ -1,0 +1,28 @@
+.loader {
+    &-container {}
+
+    &-item {
+        height: rem(36);
+        margin-top: rem(16);
+        width: 100%;
+    }
+    
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(32);
+
+        &__column{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: rem(32);
+        }
+
+        &__item {
+            height: rem(180);
+            width: 100%;
+            border-radius: rem(24);
+        }
+    }
+}

@@ -1,0 +1,85 @@
+html {
+  // responsive font size
+  font-size: calc(100vw / 1280 * 10);
+  @media screen and (max-width: 767px) {
+    font-size: calc(100vw / 393 * 10);
+  }
+}
+
+body {
+  // font-size: 1.4rem;
+  color: map-get($black-map, 200 );
+  background-color: $ghost;
+  font-family: $primary-font;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+html, body, #__nuxt{
+  height: 100%;
+  width: 100%;
+}
+
+*,
+*::after,
+*::before {
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+}
+input,
+button {
+  display: inline-block;
+  border: none;
+}
+
+img {
+  transition: opacity 0.4s ease;
+  vertical-align: middle;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url(/svg/chevron-down.svg);
+  background-position: calc(100% - 1rem) center;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+}
+
+input[type='checkbox'] {
+  $dimension: rem(20);
+  height: $dimension;
+  width: $dimension;
+  appearance: none;
+  color: $white;
+  @include border('transparent', rem(4), rem(1));
+  background-color: map-get($silver-map, 100 );
+  position: relative;
+}
+
+input[type='checkbox']:checked {
+  background-color: $green;
+}
+// input[type='checkbox']:checked::after 
+input[type='checkbox']::before {
+  content: url('data:image/svg+xml; utf8, <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M10.293 1.293L4.00001 7.586L1.70701 5.293C1.51841 5.11084 1.26581 5.01005 1.00361 5.01232C0.741412 5.0146 0.4906 5.11977 0.305192 5.30518C0.119784 5.49059 0.0146148 5.7414 0.0123364 6.0036C0.010058 6.26579 0.110852 6.5184 0.29301 6.707L3.29301 9.707C3.48054 9.89447 3.73485 9.99979 4.00001 9.99979C4.26517 9.99979 4.51948 9.89447 4.70701 9.707L11.707 2.707C11.8892 2.5184 11.99 2.26579 11.9877 2.0036C11.9854 1.7414 11.8802 1.49059 11.6948 1.30518C11.5094 1.11977 11.2586 1.0146 10.9964 1.01232C10.7342 1.01005 10.4816 1.11084 10.293 1.293Z" fill="white"/></svg>');
+  display: block;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+ul { margin: 0; padding: 0; list-style: none;}

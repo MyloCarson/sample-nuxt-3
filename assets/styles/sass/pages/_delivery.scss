@@ -1,0 +1,23 @@
+.delivery {
+    
+    &-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: rem(32);
+        row-gap: rem(36);
+        height: 90%;
+        overflow-y: scroll;
+        padding-right: rem(10);
+    }
+
+    & .table-pagination {
+        justify-content: center;
+        flex: 1;
+    }
+}

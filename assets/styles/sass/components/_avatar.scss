@@ -1,0 +1,9 @@
+.avatar{
+    $size: rem(26);
+    background-color: $primary-color;
+    border-radius: 50%;
+    @extend %description-10;
+    font-weight: 500;
+    padding: rem(8) rem(10);
+    color: map-get($black-map, 200 );
+}

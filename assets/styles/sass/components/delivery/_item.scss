@@ -1,0 +1,63 @@
+.delivery__item {
+    @include border(map-get($silver-map, 300), rem(12), rem(1));
+    padding: rem(16);
+    padding-bottom: rem(32);
+
+    &--alternate {
+        padding: rem(20) 0;
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        border-radius: 0;
+    }
+
+    &-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: rem(24);
+    }
+    &-title {
+        @extend %description-14;
+        font-weight: 600;
+    }
+
+    &__partner{
+        &-name {
+            color: $white;
+            @extend %description-10;
+            font-weight: 600;
+            display: inline;
+            margin-right: rem(4);
+        }
+        &-section{
+            background-color: map-get($black-map, 400);
+            padding: rem(3) rem(2) rem(2) rem(12);
+            border-radius: rem(20);
+            display: inline-block;
+            margin-top: rem(8);
+        }
+
+        &-list{
+            display: inline-block;
+            & li {
+                display: inline;
+                background-color: $white;
+                border-radius: rem(20);
+                @extend %description-10;
+                font-weight: 600;
+                padding:  rem(2) rem(8);
+                margin-right: rem(2);
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .status {
+        margin-right: rem(4);
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}   

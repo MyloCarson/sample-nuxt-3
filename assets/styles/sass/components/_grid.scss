@@ -1,0 +1,19 @@
+@use 'flexbox-grid-mixins';
+
+.grid {
+    @include flexbox-grid-mixins.grid();
+    @for $i from 1 through 12 {
+        &-cols-#{$i}{
+            @include flexbox-grid-mixins.grid-col($i);
+        }
+    }
+    &-cols-24{
+        @include flexbox-grid-mixins.grid-col(2.4);
+    }
+    &-cols-22{
+        @include flexbox-grid-mixins.grid-col(2.2);
+    }
+    &-cols-25{
+        @include flexbox-grid-mixins.grid-col(2.5);
+    }
+}

@@ -1,0 +1,21 @@
+.transaction {
+    &__detail {
+        margin-top: rem(32);
+        &-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: rem(24);
+        }
+
+        &__title {
+            color: map-get($silver-map, 200);
+            @extend %description-12;
+            font-weight: 500
+        }
+        &__description {
+            @extend %description-12;
+            font-weight: 600;
+        }
+    }
+}

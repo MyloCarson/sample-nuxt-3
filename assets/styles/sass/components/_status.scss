@@ -1,0 +1,42 @@
+.status {
+  padding: rem(5) rem(16);
+  min-width: rem(80);
+  display: inline-block;
+  @extend %description-12;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+  @include border('transparent', rem(13), 0);
+
+
+  //variants
+  &--pending {
+    background-color: map-get($status-map, 'yellow-light');
+    color: map-get($status-map, yellow);
+  }
+  &--success {
+    background-color: map-get($status-map, 'green-light');
+    color: $green;
+  }
+  &--inprogress {
+    background-color: map-get($status-map, 'purple-light');
+    color: map-get($status-map, purple);
+  }
+  &--cancelled {
+    background-color: map-get($status-map, 'red-light');
+    color: map-get($status-map, red);
+  }
+  &--new {
+    background-color: map-get($black-map, 100);
+    color: $white;
+  }
+
+  &--with-borders {
+    border:  rem(1) solid currentColor;
+  }
+
+  &--small {
+    @extend %description-10;
+    padding: rem(2) rem(6);
+  }
+}

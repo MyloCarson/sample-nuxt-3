@@ -1,0 +1,83 @@
+.dropdown{
+    display: none;
+    position: absolute;
+    background-color: $white;
+    width: 100%;
+    height: auto;
+    padding: rem(16) rem(8);
+    top: rem(20);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    @include border(rem(1), rem(14), $ghost-light);
+    box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.1);
+    z-index: z('dropdown');
+
+    &:hover {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+      // transform: translateY(rem(20));
+    }
+
+    & > li {
+        padding: rem(20) rem(8) ;
+        border-bottom: rem(1) solid $snow;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        > div {
+            width: 100%;
+        }
+
+        &:first-child {
+            padding-top: rem(16);
+        }
+
+        &:last-child {
+            border: none;
+            padding-bottom: rem(16)
+        }
+    }
+
+    &-text {
+        @extend %description-12;
+        font-weight: 500;
+    }
+
+    &-control {
+      /* flex flex-col */
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      padding-bottom: rem(32);
+    }
+
+    &-container{
+      position: relative;
+      & .dropdown-control:hover + ul {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &:hover .dropdown-control:hover + ul {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &-coming-soon {
+        background-color: $blueish;
+        border: none;
+        border-radius: rem(16);
+        color: $white;
+        padding: rem(2) rem(3);
+    }
+
+    &-onboard-text{
+      color: map-get($status-map, yellow);
+    }
+    
+  }

@@ -1,0 +1,267 @@
+.table {
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0;
+    thead {
+        @extend %sticky;
+    }
+    &-container {
+        position: relative;
+        width: 100%;
+        height: calc(90% - 3.5rem);
+        overflow-y: scroll;
+
+        //test
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &-row{
+        width: 100%;
+        align-items: center;
+        &--with-bg{
+            background-color: $white;
+            border-radius: rem(8);
+        }
+        
+    }
+
+    &-header, &-data{
+        padding: rem(16) rem(16);
+        @extend %description-12;
+        font-weight: 500;
+        text-align: left;
+        color: map-get($black-map, 200 );
+    }
+
+    &-header {
+        text-transform: uppercase;
+        color: map-get($black-map, 300 );
+        $radius: rem(8);
+        background-color: $ghostwhite;
+
+        &:first-child {
+            border-top-left-radius: $radius;
+            border-bottom-left-radius: $radius;
+        }
+
+        &:last-child {
+            border-top-right-radius: $radius;
+            border-bottom-right-radius: $radius;
+        }
+    }
+
+    &-data{
+        @extend %clamp;
+        padding: rem(20) rem(16);
+        cursor: pointer;
+        &-section {
+            height: calc(100% - 13rem);
+            overflow-y: scroll;
+        }
+    }
+
+    &-avatar {
+        margin-right: rem(10);
+    }
+
+    
+
+
+    &-filter{
+
+        &__status{
+
+            &-list{
+                display: flex;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+            }
+
+            &-item{
+                list-style: none;
+                padding: rem(20) rem(10);
+                border-bottom: rem(1) solid map-get($silver-map, 300 );
+                transition: all .2s ease-in-out;
+
+                &:has(a.active) {
+                    border-color: map-get($black-map, 100 )
+                }
+            }
+
+            &-action {
+                @extend %description-12;
+                font-weight: 500;
+                color: map-get($black-map, 200);
+            }
+            &-label{
+                text-transform: capitalize;
+                margin-right: rem(3);
+            }
+            &-stat{
+                border-radius: rem(4);
+                padding: rem(1) rem(3);
+
+                &.status--default{
+                    background-color: map-get($browm-map, 100);
+
+                }
+
+            }
+        }
+
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: rem(32);
+        }
+
+        &-control{
+            
+            @include border($ghost, rem(10), rem(1));
+            padding: rem(9);
+            margin-right: rem(20);
+            position: relative;
+            &__container{
+                display: flex;
+
+            }
+
+            & + .dropdown{
+                top: rem(32);
+                min-width: rem(230);
+                right: rem(20);
+                padding: rem(24) rem(16);
+                overflow: hidden;
+                padding-top: rem(8);
+                padding-bottom: rem(8);
+
+                &:hover {
+                    // transform: translateY(rem(20));
+                }
+            }
+        }
+
+        
+
+        &__dropdown {
+            &-title {
+                @extend %description-12;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: map-get($grey-map, 100);
+                display: block;
+            }
+
+            &-menu{
+                &-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start !important;
+                    border: none !important;
+                    padding-top: rem(16) !important;
+                    padding-bottom: rem(8) !important;
+                }
+                &__list {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    @extend %description-12;
+                    margin-top: rem(16);
+                    width: 100%;
+                    
+                    & > li {
+                        margin-bottom: rem(16);
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        &:last-child {
+                            margin-bottom: none;
+                        }
+                    }
+
+                }
+                &-status{
+                    $size: rem(4);
+                    width: $size;
+                    height: $size;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin-right: rem(8);
+                    vertical-align: middle;
+                    &.status--default {
+                        background-color: map-get($black-map, 100 );
+                    }
+                    &.status--success {
+                        background-color: $green
+                    }
+                    &.status--cancelled {
+                        background-color: map-get($status-map, red );
+                    }
+                    &.status--pending {
+                        background-color: map-get($status-map, yellow );
+                    }
+
+                }
+            }
+
+            &-wrapper {
+                position: relative;
+            }
+        }
+    }
+
+    &-pagination{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        @extend %sticky;
+        bottom: 0;
+        width: 100%;
+        background-color: $white;
+        padding-top: rem(20);
+        padding-right: rem(16);
+
+        // test
+        margin-top: auto;
+        padding-top: rem(32);
+
+        &__page-controls {
+            > li {
+                display: inline;
+                vertical-align: middle;
+                @extend %description-14;
+                font-weight: 500;
+                border-radius: rem(6);
+                padding: rem(2) rem(8);
+                background-color: transparent;
+                transition: background-color .3s ease-in-out;
+                &:first-child {
+                    // margin-left: rem(8);
+                }
+                &:last-child {
+                    margin-right: rem(0);
+                }
+
+                &.active{
+                    background-color: $snow;
+                }
+            }
+        }
+    }
+}
+
+.table-filter__container + .table {
+    & .table-data-section {
+        height: calc(100% - 210px);
+        overflow-y: scroll;
+
+        @include devices(large) {
+            height: calc(100% - 155px);
+        }
+    }
+}

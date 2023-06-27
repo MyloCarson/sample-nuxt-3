@@ -1,0 +1,47 @@
+.stepper {
+    display: flex;
+    justify-content: center;
+    &-item {
+        $dimension: rem(24);
+        @extend %description-14;
+        font-weight: 500;
+        color: $white;
+        background-color: map-get($silver-map, 200 );
+        width: $dimension;
+        height: $dimension;
+        text-align: center;
+        border-radius: 50%;
+        vertical-align: middle;
+        padding-top: rem(1);
+        padding-left: rem(-1);
+        position: relative;
+        display: inline-block;
+        margin-right: rem(72);
+
+        @include devices(mobile) {
+            padding-top: rem(4);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.active{
+            background-color: map-get($black-map, 200 );
+            color: $primary-color;
+        }
+
+        &:not(:last-child)::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: rem(72);
+            height: rem(24);
+            top: 50%;
+            left: rem(24);
+            border-top: rem(2) dashed map-get($silver-map, 300 );
+        }
+
+        
+    }
+}

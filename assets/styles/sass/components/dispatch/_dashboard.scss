@@ -1,0 +1,17 @@
+.dispatch-dashboard {
+    padding-top: rem(20);
+    height: calc(100% - 2rem - 10rem);
+    overflow-y: hidden;
+
+    @include devices(large){
+        height: calc(100% - 2rem - 9rem);
+    }
+
+    &__status-update {
+
+        .dropdown {
+            width: rem(234);
+            right: 0;
+        }
+    }
+}

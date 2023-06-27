@@ -1,0 +1,68 @@
+@mixin font($font-family, $font-file, $font-weight) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file + ".otf") format("opentype");
+    font-weight: $font-weight;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@mixin maxw($width) {
+  max-width: $width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin grid {
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+@mixin spaceTop($spacing: 40) {
+  > :not(:first-child) {
+    margin-top: $spacing;
+  }
+}
+
+@mixin spaceLeft($spacing: 40) {
+  > :not(:first-child) {
+    margin-left: $spacing;
+  }
+}
+
+@mixin border($color: $color-shade-300, $radius: 1.2rem, $width: 0.1rem) {
+  border: $width solid $color;
+  border-radius: $radius;
+}
+
+@mixin margin-children($spacing: 40) {
+  > :not(:first-child) {
+    margin-top: $spacing;
+  }
+}
+
+@mixin devices ($breakpoint) { //the name of the mixin is devices
+
+  @if $breakpoint == large {
+    @media only screen and (max-width: 1280px) {
+      
+      @content;
+    }
+  }
+  
+  @if $breakpoint == tablet {   
+    @media only screen and (min-width: 768px)  and (max-width: 992px){
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 640px) {
+      @content;
+    }
+  }
+}

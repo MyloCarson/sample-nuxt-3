@@ -1,0 +1,67 @@
+.settings{
+    // height: 100%;
+    // overflow-y: hidden;
+    &__tab-control {
+        padding: rem(20) rem(16);
+        border-bottom: rem(1) solid transparent;
+        position: relative;
+        top: rem(1);
+        transition: all .2s ease-in-out;
+        @extend %description-12;
+        font-weight: 500;
+        color:  map-get($black-map, 300 );
+        z-index: 0;
+
+        &.active {
+            border-color:  map-get($black-map, 200 );
+            color:  map-get($black-map, 200 );
+        }
+    }
+
+    &-header {
+        @extend %sticky;
+        top: 0rem;
+        background-color: $white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__tab-controls {
+        border-bottom: rem(1) solid map-get($silver-map, 300 );
+        display: inline-block;
+        
+    }
+    &-profile {
+        height: 100%;
+        overflow-y: scroll;
+        &__section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            margin-top: rem(64);
+            
+    
+            & div:not(:first-child) {
+                max-width: rem(410);
+            }
+        }
+    
+        &__button{
+            width: rem(164);
+            margin-left: auto;
+             margin-top: rem(72);
+        }
+    
+        &__helper {
+            &-text{
+                @extend %description-12;
+                font-weight:  500;
+                margin-left: rem(8);
+            }
+            &-section{
+                display: flex;
+                align-items: center;
+                margin-top: rem(28);
+            }
+        }
+    }
+}

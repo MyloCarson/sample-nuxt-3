@@ -1,0 +1,11 @@
+// usage of font mixin
+
+@include font('SF Pro Display', "/fonts/SF-Pro-Display-Ultralight", 100);
+@include font('SF Pro Display', "/fonts/SF-Pro-Display-Thin", 200);
+@include font('SF Pro Display', "/fonts/SF-Pro-Display-Light", 300);
+@include font('SF Pro Display', "/fonts/SF-Pro-Display-Regular", 400);
+@include font('SF Pro Display', "/fonts/SF-Pro-Display-Medium", 500);
+@include font('SF Pro Display', "/fonts/SF-Pro-Display-Semibold", 600);
+@include font('SF Pro Display', "/fonts/SF-Pro-Display-Bold", 700);
+@include font('SF Pro Display', "/fonts/SF-Pro-Display-Heavy", 800);
+@include font('SF Pro Display', "/fonts/SF-Pro-Display-Black", 900);
